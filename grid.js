@@ -1,6 +1,6 @@
 const GRID = document.getElementById("grid")
 const ROWS = 30
-const COLS = ROWS
+const COLS = 15
 let canPaint = false
 let run_btn = document.getElementById("run")
 let graph = new Array(ROWS)
@@ -34,9 +34,7 @@ for(i = 0; i < ROWS * COLS; i++){
 
 	//Crear inicio
 	if(i == 0){
-		let div_player = document.createElement("div")
-		div_player.classList.add("player")
-		div.appendChild(div_player)
+		current_div.classList.add("player")
 	}
 
 	// //Crear meta

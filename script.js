@@ -1,4 +1,4 @@
-let x1 = [[0.0, 0.0, 0.0, 0.0],
+let x = tf.tensor2d([[0.0, 0.0, 0.0, 0.0],
 [0.0, 0.0, 0.0, 0.5],
 [0.0, 0.0, 0.0, 1.0],
 [0.0, 0.0, 0.5, 0.0],
@@ -77,9 +77,9 @@ let x1 = [[0.0, 0.0, 0.0, 0.0],
 [1.0, 1.0, 0.5, 0.5],
 [1.0, 1.0, 0.5, 1.0],
 [1.0, 1.0, 1.0, 0.0],
-[1.0, 1.0, 1.0, 0.5]];
+[1.0, 1.0, 1.0, 0.5]]);
 
-let y = [[0,	-1],
+let y = tf.tensor2d([[0,	-1],
 [-1,	-1],
 [-1,	0],
 [0,	-1],
@@ -159,7 +159,16 @@ let y = [[0,	-1],
 [0,	1],
 [0,	-1],
 [0,	-1]
-];
+]);
 
-let oculta1 = tf.keras.layers.Dense({units:3, input_shape:[4]})
-let salida = tf.keras.layers.Dense({units:2})
+// const modelo = tf.sequential()
+// modelo.add([oculta1,oculta2,oculta3,oculta4, salida])
+const modelo = tf.sequential()
+modelo.add(tf.layers.dense({units:6, inputShape:[4]}))
+modelo.add(tf.layers.dense({units:6}))
+modelo.add(tf.layers.dense({units:2}))
+modelo.compile({
+    loss: 'meanSquaredError',
+    optimizer: 'adam'
+  })
+let historial = modelo.fit(x, y, {epochs:1000, verbose:false})

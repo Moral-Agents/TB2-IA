@@ -6,12 +6,13 @@
 #grid .cell{
 	padding: 25px;
 	border: .5px solid #000000;
-    background-color: yellow;
 }
 
 #grid .cell-filled{
 	background-image: url("img/bg-block.png");
-	margin: 0px auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
 }
 
 .road{
@@ -19,7 +20,11 @@
 }
 
 .player{
-    background-image: url("img/bg-block.png");
+    background-image: url("img/car.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+
 }
 
 .target{
