@@ -1,7 +1,7 @@
 #grid {
 	display: grid;
 	margin-top: 1rem;
-	grid-template-columns: repeat(30, 1fr);
+	grid-template-columns: repeat(32, 1fr);
 }
 #grid .cell{
 	padding: 25px;
@@ -29,6 +29,6 @@
 
 .target{
 	text-align: center;
-	color: purple;
+	background-color:#c3c3c3;
 	font-weight: bold;
 }
